@@ -1,6 +1,9 @@
 export default function getSuperKill(object) {
     let result = [];
-    let special = object.special;
+    let special;
+    if ('special' in object) {
+      special = object.special
+    } 
     for (let i in special) {
         const {id, name, icon, description = 'Описание недоступно'} = special[i];
         let forPush = {
